@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { OfferedProgramDto } from 'src/DTO/OfferedCourseDto';
+import { SearchDto } from 'src/DTO/SearchDto';
 import { UniversityDto } from 'src/DTO/UniversityDto';
 import { OfferedProgramEntity } from 'src/UserProfile/Entity/OfferedCourseEntity,';
 import { Universityentity } from 'src/UserProfile/Entity/UniversityEntity';
@@ -118,7 +119,7 @@ export class UniversityServices {
             throw new BadRequestException(error.message);
         }}
 
-        async UniveersityLanding(search: string){
+        async UniveersityLanding(search: SearchDto){
             try { if(search){
 
                 const university = await this.Uni.find();
@@ -128,7 +129,7 @@ export class UniversityServices {
                 else{
 
                     const university = await this.Uni.findOne({
-                        where: { UniversityName: search },
+                        where: { UniversityName: search.search },
                       });
                     
                     // const university = await this.Uni
