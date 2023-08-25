@@ -16,7 +16,7 @@ import { OfferedProgramEntity } from '../Entity/OfferedCourseEntity,';
         port: 3306,
         username: 'root',
         password: 'sazzad',
-        database: 'islam',
+        database: 'university',
         //entities: [Mosque,User,UserBookings,BookingMosque,Announcemententity],
         autoLoadEntities: true,
         synchronize: false,
