@@ -3,6 +3,9 @@ import{TypeOrmModule} from '@nestjs/typeorm';
 import { Universityentity } from '../Entity/UniversityEntity';
 import { Coursesentity } from '../Entity/CourseEntity';
 import { Udepartmententity } from '../Entity/UniDepartmentEnitty';
+import { DepartmentLoginEntity } from '../Entity/DepartmnetLoginEntity';
+import { NoticeEntity } from '../Entity/NoticeEntity';
+import { OfferedProgramEntity } from '../Entity/OfferedCourseEntity,';
 
 
 @Module({
@@ -17,7 +20,7 @@ import { Udepartmententity } from '../Entity/UniDepartmentEnitty';
         //entities: [Mosque,User,UserBookings,BookingMosque,Announcemententity],
         autoLoadEntities: true,
         synchronize: false,
-	}),TypeOrmModule.forFeature([Universityentity,Coursesentity,Udepartmententity,])
+	}),TypeOrmModule.forFeature([Universityentity,Coursesentity,Udepartmententity,DepartmentLoginEntity,NoticeEntity,OfferedProgramEntity])
 	],
   providers: [],
   controllers: []

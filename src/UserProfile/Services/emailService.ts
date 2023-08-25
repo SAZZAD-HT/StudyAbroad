@@ -1,35 +1,35 @@
-import { Injectable } from '@nestjs/common';
+// import { Injectable } from '@nestjs/common';
 
-import { MailerService } from '@nestjs-modules/mailer';
+// import { MailerService } from '@nestjs-modules/mailer';
 
-// import * as nodemailer from 'nodemailer';
-
-
-
-
-@Injectable()
-
-export class EmailService {
-
-  constructor(private mailerService: MailerService) {}
+// // import * as nodemailer from 'nodemailer';
 
 
 
 
-  async sendEmail(mydata) {
+// @Injectable()
 
-    return this.mailerService.sendMail({
+// export class EmailService {
 
-      to: mydata.to,
+//   constructor(private mailerService: MailerService) {}
 
-      subject: mydata.subject,
 
-      text: mydata.text,
+
+
+//   async sendEmail(mydata) {
+
+//     return this.mailerService.sendMail({
+
+//       to: mydata.to,
+
+//       subject: mydata.subject,
+
+//       text: mydata.text,
 
      
 
-    })
+//     })
 
-  }
+//   }
 
-}
+// }
