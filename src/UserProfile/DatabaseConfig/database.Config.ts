@@ -6,6 +6,7 @@ import { Udepartmententity } from '../Entity/UniDepartmentEnitty';
 import { DepartmentLoginEntity } from '../Entity/DepartmnetLoginEntity';
 import { NoticeEntity } from '../Entity/NoticeEntity';
 import { OfferedProgramEntity } from '../Entity/OfferedCourseEntity,';
+import { UniversityServices } from 'src/Services/UniversityServices';
 
 
 @Module({
@@ -22,7 +23,7 @@ import { OfferedProgramEntity } from '../Entity/OfferedCourseEntity,';
         synchronize: false,
 	}),TypeOrmModule.forFeature([Universityentity,Coursesentity,Udepartmententity,DepartmentLoginEntity,NoticeEntity,OfferedProgramEntity])
 	],
-  providers: [],
+  providers: [UniversityServices],
   controllers: []
 
   
