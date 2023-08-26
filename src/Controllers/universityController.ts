@@ -32,6 +32,10 @@ export class UniversityController {
     async getProgramme() {
         return await this.universityService.getProgramme();
     }
+    @Get('/get/Porgramme/:IdProgramme')
+    async getProgrammeById(@Param('IdProgramme', ParseIntPipe) IdProgramme: number) {
+        return await this.universityService.getProgrammeById(IdProgramme);
+    }
     @Post('/create/Programme')
     async createProgramme(@Body() data) {
         return await this.universityService.createProgramme(data);

@@ -90,7 +90,8 @@ export class UniversityServices {
     }
     async getProgrammeById(OfferedProgramID: number) {
         try {
-            const programme = await this.Programme.findOneBy({OfferedProgramID});
+           var  programme = await this.Programme.find({  where: { OfferedProgramID: OfferedProgramID },});
+           
             return programme;
         } catch (error) {
             throw new BadRequestException(error.message);
@@ -138,7 +139,7 @@ export class UniversityServices {
                     // .createQueryBuilder('university')
                     // .where('university.UniversityName LIKE :search', { search: `%${search}%` })
                     // .getMany();
-                    return {university};
+                    return [university];
                 }
             } catch (error) {
                 throw new BadRequestException(error.message);
