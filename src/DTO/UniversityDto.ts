@@ -18,6 +18,7 @@ export class UniversityDto{
     UniversityDescription: string;
   
     UniCity: string;
+    UniImage: string;
   
     UniversityLongtitude: string;
   

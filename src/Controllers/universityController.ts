@@ -20,6 +20,10 @@ export class UniversityController {
     async createUniversity(@Body() data:UniversityDto) {
         return await this.universityService.createUniversity(data);
     }
+    @Get('/get/University/:IdUniversity')
+    async getUniversityById(@Param('IdUniversity', ParseIntPipe) IdUniversity: number) {
+        return await this.universityService.getUniversityById(IdUniversity);
+    }
     @Put('/update/University/:IdUniversity')
     async updateUniversity(@Param('IdUniversity', ParseIntPipe) IdUniversity: number, @Body() data) {
         return await this.universityService.updateUniversity(IdUniversity, data);
@@ -32,7 +36,7 @@ export class UniversityController {
     async createProgramme(@Body() data) {
         return await this.universityService.createProgramme(data);
     }
-    @Get('/UniversityLanding')
+    @Post('/UniversityLanding')
     async UniversityLanding(@Body() data:SearchDto) {
         return await this.universityService.UniveersityLanding(data);
     }

@@ -27,6 +27,8 @@ export class Universityentity{
     UniversityLongtitude: string;
     @Column()
     UniversityLatitude: string;
+    @Column({ nullable: true,length: 10000 })
+    UniImage: string;
     @Column()
     IsActive: string;  
 

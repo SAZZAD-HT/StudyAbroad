@@ -120,15 +120,17 @@ export class UniversityServices {
         }}
 
         async UniveersityLanding(search: SearchDto){
-            try { if(search){
+            try { if(!search){
 
                 const university = await this.Uni.find();
+                
+                
            
                 return {university};}
 
                 else{
 
-                    const university = await this.Uni.findOne({
+                    var university = await this.Uni.findOne({
                         where: { UniversityName: search.search },
                       });
                     
