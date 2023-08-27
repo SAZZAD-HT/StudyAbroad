@@ -44,7 +44,14 @@ export class UniversityController {
     async UniversityLanding(@Body() data:SearchDto) {
         return await this.universityService.UniveersityLanding(data);
     }
-
+        @Get('/universityDDl')
+        async universityDDl() {
+            return await this.universityService.UniversityDDL();
+        }
+        @Get('/Location')
+        async Location() {
+            return await this.universityService.UniversityLocation();
+        }
 
         
 }

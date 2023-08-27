@@ -139,12 +139,49 @@ export class UniversityServices {
                     // .createQueryBuilder('university')
                     // .where('university.UniversityName LIKE :search', { search: `%${search}%` })
                     // .getMany();
-                    return [university];
+                    return university;
                 }
             } catch (error) {
                 throw new BadRequestException(error.message);
             }
         }
+
+        async UniversityLocation() {
+            try {
+                const universities = await this.Uni.find();
+        
+                // Map the universities to the required format for the dropdown
+                const universityDDL = universities.map((university) => ({
+                    IdUniversity: university.IdUniversity,
+                    UniversityName: university.UniversityName,
+                    UniversityCity: university.UniversityCity,
+                    UniversityLongtitude: university.UniversityLongtitude,
+                    UniversityLatitude: university.UniversityLatitude
+                }));
+        
+                return universityDDL;
+            } catch (error) {
+                throw new BadRequestException(error.message);
+            }
+        }
+        async UniversityDDL() {
+            try {
+                const universities = await this.Uni.find();
+        
+                // Map the universities to the required format for the dropdown
+                const universityDDL = universities.map((university) => ({
+                    IdUniversity: university.IdUniversity,
+                    UniversityName: university.UniversityName,
+                   
+                }));
+        
+                return universityDDL;
+            } catch (error) {
+                throw new BadRequestException(error.message);
+            }
+        }
+        
+
         async UniversityLandingById(IdUniversity: number){
             try {
                 const university = await this.Uni.findOneBy({IdUniversity});
