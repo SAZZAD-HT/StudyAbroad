@@ -22,6 +22,10 @@ export class LoginServices {
     ) {}
     async createUniversity(data: DepartmentLoginEntity) {
         try {
+            var data = await this.Uni.findOne({ where: { DeptEmail: data.DeptEmail } });
+            if (data) {
+                throw new NotFoundException('University already exist');
+            }
           
             const university = await this.Uni.save(data);
 
@@ -83,7 +87,7 @@ export class LoginServices {
         } catch (error) {
             throw new BadRequestException(error.message);
         }}
-        
+
    
         
 
