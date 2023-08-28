@@ -127,7 +127,7 @@ export class UniversityServices {
                 
                 
            
-                return {university};}
+                return [university];}
 
                 else{
 
@@ -139,7 +139,7 @@ export class UniversityServices {
                     // .createQueryBuilder('university')
                     // .where('university.UniversityName LIKE :search', { search: `%${search}%` })
                     // .getMany();
-                    return university;
+                    return [university];
                 }
             } catch (error) {
                 throw new BadRequestException(error.message);

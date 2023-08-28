@@ -15,12 +15,13 @@ import { LoginController } from 'src/Controllers/LoginController';
 @Module({
 	imports:[
 	TypeOrmModule.forRoot({
-      type: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        username: 'root',
-        password: 'sazzad',
-        database: 'university',
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+        // host: 'localhost',
+        // port: 3306,
+        // username: 'root',
+        // password: 'sazzad',
+        // database: 'university',
         //entities: [Mosque,User,UserBookings,BookingMosque,Announcemententity],
         autoLoadEntities: true,
         synchronize: false,
